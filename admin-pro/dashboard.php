@@ -34,8 +34,17 @@
                                 <div class="d-flex no-block">
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="assets/images/icon/income.png" alt="Income" /></div>
                                     <div class="align-self-center">
-                                        <h6 class="text-muted m-t-10 m-b-0">Total Income</h6>
-                                        <h2 class="m-t-0">953,000</h2></div>
+                                        <?php
+                                                $sql_blog_count = "SELECT COUNT(*) as blog_count FROM blog_tbl";
+                                                $rs_blog_count = mysqli_query($con,$sql_blog_count);
+                                                if(!$rs_blog_count)
+                                                {
+                                                    die('No Blog Found.'.mysqli_error($con));
+                                                }
+                                                $row_blog_count = mysqli_fetch_array($rs_blog_count);
+                                        ?>
+                                        <h6 class="text-muted m-t-10 m-b-0">Total Blog</h6>
+                                        <h2 class="m-t-0"><?php echo $row_blog_count['blog_count']; ?></h2></div>
                                 </div>
                             </div>
                         </div>
@@ -46,8 +55,17 @@
                                 <div class="d-flex no-block">
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="assets/images/icon/expense.png" alt="Income" /></div>
                                     <div class="align-self-center">
-                                        <h6 class="text-muted m-t-10 m-b-0">Total Expense</h6>
-                                        <h2 class="m-t-0">236,000</h2></div>
+                                        <?php
+                                            $sql_gallery_count = "SELECT COUNT(*) as gallery_count FROM gallery_tbl";
+                                            $rs_gallery_count = mysqli_query($con,$sql_gallery_count);
+                                            if(!$rs_gallery_count)
+                                            {
+                                                die('No Gallery Found.'.mysqli_error($con));
+                                            }
+                                            $row_gallery_count = mysqli_fetch_array($rs_gallery_count);
+                                        ?>
+                                        <h6 class="text-muted m-t-10 m-b-0">Total gallery</h6>
+                                        <h2 class="m-t-0"><?php echo $row_gallery_count['gallery_count']; ?></h2></div>
                                 </div>
                             </div>
                         </div>
@@ -58,8 +76,17 @@
                                 <div class="d-flex no-block">
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="assets/images/icon/assets.png" alt="Income" /></div>
                                     <div class="align-self-center">
-                                        <h6 class="text-muted m-t-10 m-b-0">Total Assets</h6>
-                                        <h2 class="m-t-0">987,563</h2></div>
+                                        <?php
+                                                $sql_service_count = "SELECT COUNT(*) as service_count FROM service_tbl";
+                                                $rs_service_count = mysqli_query($con,$sql_service_count);
+                                                if(!$rs_service_count)
+                                                {
+                                                    die('No Service Found.'.mysqli_error($con));
+                                                }
+                                                $row_service_count = mysqli_fetch_array($rs_service_count);
+                                        ?>
+                                        <h6 class="text-muted m-t-10 m-b-0">Total Service</h6>
+                                        <h2 class="m-t-0"><?php echo $row_service_count['service_count']; ?></h2></div>
                                 </div>
                             </div>
                         </div>
@@ -70,8 +97,17 @@
                                 <div class="d-flex no-block">
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="assets/images/icon/staff.png" alt="Income" /></div>
                                     <div class="align-self-center">
-                                        <h6 class="text-muted m-t-10 m-b-0">Total Staff</h6>
-                                        <h2 class="m-t-0">987,563</h2></div>
+                                        <?php
+                                                $sql_enquiry_count = "SELECT COUNT(*) as enquiry_count FROM enquiry_tbl";
+                                                $rs_enquiry_count = mysqli_query($con,$sql_enquiry_count);
+                                                if(!$rs_enquiry_count)
+                                                {
+                                                    die('No Enquiry Found.'.mysqli_error($con));
+                                                }
+                                                $row_enquiry_count = mysqli_fetch_array($rs_enquiry_count);
+                                        ?>
+                                        <h6 class="text-muted m-t-10 m-b-0">Total Enquiry</h6>
+                                        <h2 class="m-t-0"><?php echo $row_enquiry_count['enquiry_count']; ?></h2></div>
                                 </div>
                             </div>
                         </div>

@@ -66,7 +66,7 @@ else
 					</div>
 					<div class="content-wrap">
 						<h2><?php echo $row_blog_detail['blog_title']; ?></h2>
-						<p><?php echo substr($bolg_desc,0,130)."...";?><a href="blog_detail.php?blog_id=<?php echo $row_blog_detail['blog_id']; ?>">READ MORE</a></p>
+						<p><?php echo substr($bolg_desc,0,130)."...";?><a href="blog_detail.php?blog_id=<?php echo $row_blog_detail['blog_id']; ?>">Read More</a></p>
 						<ul>
                             <li><span><?php echo $row_blog_detail['blog_category']; ?></span></li>
                             <li><span><b>By:</b> <?php echo $row_blog_detail['first_name']." ".$row_blog_detail['last_name']; ?></span></li>
