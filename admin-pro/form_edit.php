@@ -46,7 +46,7 @@
                                 <h4 class="m-b-0 text-white">User Register  <i class="mdi mdi-account-circle"></i></h4>
                             </div>
                             <div class="card-body">
-                                <form action="" method="post" name="form_user" id="form_user">
+                                <form action="" method="post" name="form_user" id="form_user" enctype="multipart/form-data">
                                     <div class="form-body">
                                         <h3 class="card-title">Person Info</h3>
                                         <hr>
@@ -146,6 +146,19 @@
                                                     <input type="text" class="form-control" name="txt_country"id="txt_country" value="<?php echo $row_edit['country']; ?>">
                                                 </div>
                                             </div>
+                                            <div class="col-md-12">
+                                         <div class="form-group has-danger">
+                                        <h4 class="card-title">Profile Photo</h4>
+                                        <!-- <label for="input-file-now">Your so fresh input file — Default version</label> -->
+                                        <input type="file" id="input-file-now" class="dropify" name="img_profile" id="img_profile" accept="image*/">
+                                        <img src="photos/profile-image/<?php if ($row_edit['profile'] == "") 
+                                        {
+                                            echo 'user.png';
+                                        } else {
+                                            echo $row_edit['profile'];
+                                        } ?>"
+                                                width="50px" height="50px">
+                                    </div>
                                             <!--/span-->
                                         </div>
                                     </div>
@@ -163,7 +176,23 @@
 
         if(isset($_POST['btn_submit']))
         {
-            $sql = "UPDATE form_tbl SET first_name = '".$_POST['frst_name']."',last_Name = '".$_POST['lst_name']."',gender = '".$_POST['slt_gender']."',dob = '".$_POST['frm_date']."',username = '".$_POST['user_name']."',password = '".$_POST['user_pswrd']."',street = '".$_POST['txt_street']."',city = '".$_POST['txt_city']."',state = '".$_POST['txt_state']."',post_code = '".$_POST['txt_post']."',country = '".$_POST['txt_country']."'
+            if (!empty($_FILES["img_profile"]["name"])) 
+            {
+                $filename = 'photos/profile-image/' . $row_edit['profile'];
+                unlink($filename);
+    
+                $img = $_FILES["img_profile"]["name"];
+    
+                $tmp_name = $_FILES["img_profile"]["tmp_name"];
+                if (is_uploaded_file($tmp_name)) 
+                {
+                    copy($tmp_name, "photos/profile-image/" . $img);
+                }
+            } else 
+            {
+                $img = $row_edit ['profile'];
+            }
+            $sql = "UPDATE form_tbl SET first_name = '".$_POST['frst_name']."',last_Name = '".$_POST['lst_name']."',gender = '".$_POST['slt_gender']."',dob = '".$_POST['frm_date']."',username = '".$_POST['user_name']."',password = '".$_POST['user_pswrd']."',street = '".$_POST['txt_street']."',city = '".$_POST['txt_city']."',state = '".$_POST['txt_state']."',post_code = '".$_POST['txt_post']."',country = '".$_POST['txt_country']."', profile = '".$img."'
             WHERE form_id = '".$_GET['id']."' ";
             $rs = mysqli_query($con,$sql);
             if(!$rs)

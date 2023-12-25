@@ -70,6 +70,7 @@
                                         <th>State</th>
                                         <th>Post Code</th>
                                         <th>Country</th>
+                                        <th>Photo</th>
                                         <th>Action</th>
                                 </tr>
                             </thead>
@@ -87,6 +88,7 @@
                                         <th>State</th>
                                         <th>Post Code</th>
                                         <th>Country</th>
+                                        <th>Photo</th>
                                         <th>Action</th>
                                 </tr>
                             </tfoot>
@@ -111,6 +113,12 @@
                                         <td><?php echo $row_view['state']; ?></td>
                                         <td><?php echo $row_view['post_code']; ?></td>
                                         <td><?php echo $row_view['country']; ?></td>
+                                        <td><img src="photos/profile-image/<?php if ($row_view['profile'] == "") {
+                                            echo 'user.png';
+                                        } else {
+                                            echo $row_view['profile'];
+                                        } ?>"
+                                                width="200px" height="150px"></td>
                                         <td class="text-nowrap">
                                             <a href="form_edit.php?id=<?php echo $row_view['form_id']; ?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
                                             <a href="form_delete.php?id=<?php echo $row_view['form_id']; ?>" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>

@@ -2,7 +2,18 @@
     include_once('header.php');
     if(isset($_POST['btn_submit']))
     {
-        $sql = "INSERT INTO form_tbl (first_name,last_Name,gender,dob,username,password,street,city,state,post_code,country) VALUES ('".$_POST['frst_name']."','".$_POST['lst_name']."','".$_POST['slt_gender']."','".$_POST['frm_date']."','".$_POST['user_name']."','".$_POST['user_pswrd']."','".$_POST['txt_street']."','".$_POST['txt_city']."','".$_POST['txt_state']."','".$_POST['txt_post']."','".$_POST['txt_country']."')";
+        $img = '';
+        {
+            if(!empty($_FILES["img_profile"]["name"]))
+            $img = $_FILES["img_profile"]["name"];
+
+            $tmp_name = $_FILES["img_profile"]["tmp_name"];
+            if(is_uploaded_file($tmp_name))
+            {
+                copy($tmp_name,"photos/profile-image/". $img);
+            }
+        }
+        $sql = "INSERT INTO form_tbl (first_name,last_Name,gender,dob,username,password,street,city,state,post_code,country,profile) VALUES ('".$_POST['frst_name']."','".$_POST['lst_name']."','".$_POST['slt_gender']."','".$_POST['frm_date']."','".$_POST['user_name']."','".$_POST['user_pswrd']."','".$_POST['txt_street']."','".$_POST['txt_city']."','".$_POST['txt_state']."','".$_POST['txt_post']."','".$_POST['txt_country']."','".$img."')";
         $rs = mysqli_query($con,$sql);
         if(!$rs)
         {
@@ -50,7 +61,7 @@
                                 <h4 class="m-b-0 text-white">User Register  <i class="mdi mdi-account-circle"></i></h4>
                             </div>
                             <div class="card-body">
-                                <form action="" method="post" name="form_user" id="form_user">
+                                <form action="" method="post" name="form_user" id="form_user" enctype="multipart/form-data">
                                     <div class="form-body">
                                         <h3 class="card-title">Person Info</h3>
                                         <hr>
@@ -152,6 +163,13 @@
                                             </div>
                                             <!--/span-->
                                         </div>
+                                        <div class="col-md-12">
+                                     <div class="form-group has-danger">
+                                        <h4 class="card-title">Profile Photo</h4>
+                                        <!-- <label for="input-file-now">Your so fresh input file — Default version</label> -->
+                                        <input type="file" id="input-file-now" class="dropify" name="img_profile" id="img_profile" accept="image*/">
+                                    </div>
+                                </div>
                                     </div>
                                     <div class="form-actions">
                                         <button type="submit" class="btn btn-success" name="btn_submit" id="btn_submit" onClick="return validForm()"> <i class="fa fa-check"></i> Save</button>

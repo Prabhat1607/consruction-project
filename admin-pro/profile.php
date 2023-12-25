@@ -29,12 +29,12 @@ include_once('header.php');
             <div class="card">
                 <div class="card-body">
                     <div class="profile-image">
-                        <img src="assets/images/pm.jpg" height="110" width="110" class="rounded-circle" alt="">
+                        <img src="photos/profile-image/<?php echo $row_user_data['profile']; ?>" height="110" width="110" class="rounded-circle" alt="">
                     </div>
                     <h4>
                         <?php echo $row_user_data['first_name'] . " " . $row_user_data['last_Name']; ?>
                     </h4>
-                    <h6 class="card-subtitle">Accounts Manager Amix corp</h6>
+                    <h6 class="card-subtitle"></h6>
                 </div>
             </div>
         </div>

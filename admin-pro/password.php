@@ -80,17 +80,20 @@ include_once('header.php');
     <!-- Row -->
 </div>
 <script>
-    function validatePassword() {
+    function validatePassword() 
+    {
         var newPassword = document.getElementById("pass_password").value;
         var confirmNewPassword = document.getElementById("new_password").value;
 
-        if (newPassword === "" || confirmNewPassword === "") {
+        if (newPassword === "" || confirmNewPassword === "") 
+        {
             alert("Please fill in both password fields.");
 
             return false;
         }
 
-        if (newPassword !== confirmNewPassword) {
+        if (newPassword !== confirmNewPassword) 
+        {
             alert("New password and confirm password do not match.");
             return false;
         }
@@ -100,13 +103,17 @@ include_once('header.php');
 </script>
 <?php
 include_once('footer.php');
-if (isset($_POST['btn_password'])) {
+if (isset($_POST['btn_password'])) 
+{
     $sql = "UPDATE form_tbl SET password = '" . $_POST['pass_password'] . "'
     WHERE form_id ='" . $row_user_data['form_id'] . "'";
     $rs = mysqli_query($con, $sql);
-    if (!$rs) {
+    if (!$rs) 
+    {
         die('Password Not Updated.' . mysqli_error($con));
-    } else {
+    } 
+        else 
+    {
         echo "<script>window.location = 'password.php';</script>";
     }
 }

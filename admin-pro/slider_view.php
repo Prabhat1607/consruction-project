@@ -55,9 +55,12 @@
                         <table id="example" class="table display table-bordered table-striped">
                             <thead>
                                 <tr>
-                                        <th>SR.No</th>
+                                <th>SR.No</th>
                                         <th>Slider Title</th>
                                         <th>Semi Title</th>
+                                        <th>Tag 1</th>
+                                        <th>Tag 2</th>
+                                        <th>Tag 3</th>
                                         <th>Image</th>
                                         <th>Action</th>
                                 </tr>
@@ -67,6 +70,9 @@
                                         <th>SR.No</th>
                                         <th>Slider Title</th>
                                         <th>Semi Title</th>
+                                        <th>Tag 1</th>
+                                        <th>Tag 2</th>
+                                        <th>Tag 3</th>
                                         <th>Image</th>
                                         <th>Action</th>
                                 </tr>
@@ -83,6 +89,9 @@
                                         <td><?php echo ++$counter; ?></td>
                                         <td><?php echo $row_view['slider_title']; ?></td>
                                         <td><?php echo $row_view['semi_title']; ?></td>
+                                        <td><?php echo $row_view['tag_1']; ?></td>
+                                        <td><?php echo $row_view['tag_2']; ?></td>
+                                        <td><?php echo $row_view['tag_3']; ?></td>
                                         <td><img src="photos/slider-image/<?php if($row_view['profile'] == ""){echo 'user.png';} else {echo $row_view['profile'];} ?>"width="200px" height="150px"></td>
                                         <td class="text-nowrap">
                                             <a href="slider_edit.php?id=<?php echo $row_view['slider_id']; ?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>

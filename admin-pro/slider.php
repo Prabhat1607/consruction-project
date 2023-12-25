@@ -13,7 +13,7 @@
                 copy($tmp_name,"photos/slider-image/" . $img);
             }
         }
-        $sql = "INSERT INTO slider_tbl (slider_title,semi_title,profile) VALUES ('".$_POST['txt_title']."','".$_POST['txt_semi']."','".$img."')";
+        $sql = "INSERT INTO slider_tbl (slider_title,semi_title,tag_1,tag_2,tag_3,profile) VALUES ('".$_POST['txt_title']."','".$_POST['txt_semi']."','".$_POST['txt_tag1']."','".$_POST['txt_tag2']."','".$_POST['txt_tag3']."','".$img."')";
         $rs = mysqli_query($con,$sql);
         if(!$rs)
         {
@@ -86,6 +86,30 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Tag 1</label>
+                                        <input type="text" id="txt_tag1" name="txt_tag1" class="form-control"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Tag 2</label>
+                                        <input type="text" id="txt_tag2" name="txt_tag2" class="form-control"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Tag 3</label>
+                                        <input type="text" id="txt_tag3" name="txt_tag3" class="form-control"
+                                            required>
+                                    </div>
+                                </div>
+                                </div>
+                        
 
                                 <!-- IMAGE -->
                             <div class="row">

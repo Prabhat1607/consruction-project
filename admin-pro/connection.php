@@ -4,10 +4,7 @@
 	{
 		die('Not Connected With Host.'.mysqli_error($con));
 	}
-    // else
-    // {
-    //     echo "Connected";
-    // }
+
 	$db = mysqli_select_db($con,'form');
 	if(!$db)
 	{

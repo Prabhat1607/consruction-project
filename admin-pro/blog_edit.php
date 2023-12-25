@@ -1,6 +1,6 @@
 <?php
     include_once('header.php');
-    $sql_edit = "SELECT * FROM blog_tbl WHERE blog_id = '".$_GET['id']."'";
+    $sql_edit = "SELECT * FROM blog_tbl WHERE blog_id = '". base64_decode($_GET['id'])."'";
     $rs_edit = mysqli_query($con,$sql_edit);
     if(!$rs_edit)
     {

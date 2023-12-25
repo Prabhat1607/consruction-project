@@ -325,12 +325,12 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="photos/profile-image/<?php echo $row_user_data['profile']; ?>" alt="user" class="profile-pic" style="width: 30px; height: 30px;"/></a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
-                                            <div class="u-img"><img src="assets/images/users/1.jpg" alt="user"></div>
+                                            <div class="u-img"><img src="photos/profile-image/<?php echo $row_user_data['profile'] ?>" alt="user" style="width: 70px; height: 70px;"></div>
                                             <div class="u-text">
                                                 <h4>   <?php echo $row_user_data['first_name']. "" . $row_user_data['last_Name']; ?></h4>
                                                 <p class="text-muted">varun@gmail.com</p><a href="profile.php" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
@@ -365,7 +365,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                     <li class="user-profile">
-                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="assets/images/users/profile.png" alt="user" /><span class="hide-menu"> <?php echo $row_user_data['first_name']. "" . $row_user_data['last_Name']; ?> </span></a>
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="photos/profile-image/<?php echo $row_user_data['profile']; ?>" alt="user" style="width: 30px; height: 30px;" /><span class="hide-menu"> <?php echo $row_user_data['first_name']. "" . $row_user_data['last_Name']; ?> </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="profile.php">My Profile </a></li>
                                 <li><a href="javascript:void()">My Balance</a></li>
@@ -394,6 +394,8 @@
                         <li> <a class="" href="client_view.php" aria-expanded="false"><i class="mdi mdi-tag-faces"></i><span class="">Client</span></a>
                         </li>
                         <li> <a class="" href="review_view.php" aria-expanded="false"><i class="mdi mdi-television-guide"></i><span class="">Review</span></a>
+                        </li>
+                        <li> <a class="" href="detail_view.php" aria-expanded="false"><i class="mdi mdi-account-card-details"></i><span class="">Details</span></a>
                         </li>
                      
                      

@@ -72,6 +72,29 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Tag 1</label>
+                                        <input type="text" id="txt_tag1" name="txt_tag1" class="form-control"
+                                        value="<?php echo $row_edit['tag_1']; ?>"  required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Tag 2</label>
+                                        <input type="text" id="txt_tag2" name="txt_tag2" class="form-control"
+                                        value="<?php echo $row_edit['tag_2']; ?>" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Tag 3</label>
+                                        <input type="text" id="txt_tag3" name="txt_tag3" class="form-control"
+                                        value="<?php echo $row_edit['tag_3']; ?>" required>
+                                    </div>
+                                </div>
+                                </div>
 
                                 <!-- IMAGE -->
                             <div class="row">
@@ -132,7 +155,7 @@
             {
                 $img = $row_edit['profile'];
             }
-            $sql = "UPDATE slider_tbl SET slider_title = '".$_POST['txt_title']."',semi_title = '".$_POST['txt_semi']."',profile = '".$img."'
+            $sql = "UPDATE slider_tbl SET slider_title = '".$_POST['txt_title']."',semi_title = '".$_POST['txt_semi']."',profile = '".$img."',tag_1 = '".$_POST['txt_tag1']."',tag_2 = '".$_POST['txt_tag2']."',tag_3 = '".$_POST['txt_tag3']."'
             WHERE slider_id = '".$_GET['id']."'";
             $rs = mysqli_query($con,$sql);
             if(!$rs)

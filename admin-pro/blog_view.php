@@ -95,8 +95,8 @@
                                         <td><img src="photos/blog-image/<?php if($row_view['photos'] == ""){echo 'user.png';} else {echo $row_view['photos'];} ?>"width="200px" height="150px"></td>
                                         <td><?php echo $row_view['blog_description']; ?></td>
                                         <td class="text-nowrap">
-                                            <a href="blog_edit.php?id=<?php echo $row_view['blog_id']; ?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                            <a href="blog_delete.php?id=<?php echo $row_view['blog_id']; ?>" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                                            <a href="blog_edit.php?id=<?php echo base64_encode ($row_view['blog_id']); ?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                            <a href="blog_delete.php?id=<?php echo base64_encode ($row_view['blog_id']); ?>" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
                                         </td>
                                     
                                     </tr>   
